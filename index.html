@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="container" class="container">
+            <div class="title-lotto">
+                <h1>Lotto</h1>
+            </div>
+            <div class="play-button-cont">
+                <button id="play-button"><i class="fa-sharp fa-solid fa-circle-play"></i></button>
+                <button id="run-button"></button>
+                <button id="stop-button"></button>
+            </div>
+            <p id="run-number-text"></p>
+            <div id="loading-cont" class="loading-cont">
+                <div id="loading" class="loading">
+                    <span id="percent">0%</span>
+                </div>
+            </div>
+            <div id="lotto-container" class="lotto-container">
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+                <div class="lotto-block"></div>
+            </div>
+        </div>
+        <div class="button-cont">
+            <button id="random-button"><i class="fa-sharp fa-solid fa-rotate-right"></i></button>
+            <audio id="bg-music" src="./sound-track/bg-music.mp3" preload="auto"></audio>
+            <div id="burger-menu" class="friends-menu">
+                <i class="fa-sharp fa-solid fa-user-group"></i>
+            </div>
+            <div id="music-btn"><i class="fa-sharp fa-solid fa-music"></i></div>
+        </div>
+        <div class="menu-sidebar">
+            <span id="close-burger-menu"><i class="fa-sharp fa-solid fa-xmark"></i></span>
+            <h2>Friends<br>menu</h2>
+            <div class="menu-search">
+                <input type="text" class="menu-input" placeholder="Search">
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
