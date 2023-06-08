@@ -111,7 +111,7 @@ function randomText(generateNumber) {
         if (i >= generateNumber.length) {
             finish(runRandom);
          }
-    }, 3 * 1000);
+    }, 500);
     stopButton.onclick = function () {
         stopInterval(runRandom);
         randomButton.disabled = false;
@@ -151,7 +151,23 @@ function checkNumberMatch(event) {
     //  else {
     //   clickedElement.style.backgroundColor = "initial";
     // }
+}
 
+
+// Not working 
+function backgroundBlockCheck () {
+    let allBoxesFilled = true;
+    for (let index = 0; index < lottoContainer.children.length; index++) {
+      let child = lottoContainer.children[index];
+      if (child.style.backgroundColor !== "rgb(188, 0, 0)") {
+        allBoxesFilled = false;
+        break;
+      }
+    }
+    
+    if (allBoxesFilled) {
+      console.log("Finish");
+    }
 }
 
 
@@ -238,8 +254,8 @@ playButton.onclick = function () {
 // Start game button
 runButton.onclick = function () {
     randomButton.disabled = true;
-    randomButton.style.opacity = "0.5"
-    randomButton.style.color = "black"
+    randomButton.style.opacity = "0.5";
+    randomButton.style.color = "black";
         resetColors();
     if (runNumberText.style.color === "rgb(53, 232, 33)") {
         runNumberText.style.color = "#333";
