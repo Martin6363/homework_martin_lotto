@@ -18,6 +18,10 @@ clickSoundTrack.volume = 0.5;
 let isPlaying = false;
 const burgerMenu = document.getElementById("burger-menu");
 const closeBurgerMenu = document.getElementById("close-burger-menu");
+const finishGameCont = document.getElementById("finish-game");
+const buttonCont = document.getElementById("button-cont")
+const finishText = document.getElementById("finish-game-text");
+const finishBtn = document.getElementById("finish-game-btn");
 
 
 function displayRandom() {
@@ -33,9 +37,10 @@ function displayRandom() {
       lottoContainer.children[randomIndexes[1]].innerHTML = '';
       lottoContainer.children[randomIndexes[2]].innerHTML = '';
       lottoContainer.children[randomIndexes[3]].innerHTML = '';
-    }
+    } 
   }
 }
+  
 
 
 function getRandomNumArr(start, end, arrLength) {
@@ -101,7 +106,6 @@ loadingAnimate();
 function randomText(generateNumber) {
     let i = 1;
     let runRandom;
-
     runRandom = setInterval(() => {
         if (i < generateNumber.length) {
             runNumberText.innerHTML = parseInt(generateNumber[i])
@@ -111,15 +115,21 @@ function randomText(generateNumber) {
         if (i >= generateNumber.length) {
             finish(runRandom);
          }
-    }, 500);
+    }, 3 * 1000);
+
+    // Stop Button
     stopButton.onclick = function () {
         stopInterval(runRandom);
         randomButton.disabled = false;
         randomButton.style.opacity = "initial";
         runNumberText.textContent = "";
+    }
+
+    // Finish game button
+    finishBtn.onclick = function () {
+        finishGameButton(runRandom);
     } 
 }  
-
 
 
 // function displayNumbers(array) {
@@ -135,39 +145,23 @@ function randomText(generateNumber) {
 function numberBlockClickDraw() {
     for (let index = 0; index < lottoContainer.children.length; index++) {
         let child = lottoContainer.children[index];
-        // child.addEventListener("click", checkNumberMatch);
-        checkNumberMatch(child)
+        child.addEventListener("click", checkNumberMatch); 
+        // checkNumberMatch(child)
     }
 }
 
 
 function checkNumberMatch(event) {
-    let clickedElement = event;
+    let clickedElement = event.target;
     // .target
     console.log("Ashxateci");
     if (clickedElement.innerHTML === runNumberText.innerHTML) {
       clickedElement.style.backgroundColor = "rgb(188, 0, 0)"
     }
-    //  else {
-    //   clickedElement.style.backgroundColor = "initial";
-    // }
-}
-
-
-// Not working 
-function backgroundBlockCheck () {
-    let allBoxesFilled = true;
-    for (let index = 0; index < lottoContainer.children.length; index++) {
-      let child = lottoContainer.children[index];
-      if (child.style.backgroundColor !== "rgb(188, 0, 0)") {
-        allBoxesFilled = false;
-        break;
-      }
+    else {
+      clickedElement.style.backgroundColor = "initial";
     }
-    
-    if (allBoxesFilled) {
-      console.log("Finish");
-    }
+    finishGame()
 }
 
 
@@ -179,6 +173,18 @@ function finish(runRandom) {
     runButton.style.display = "block";
 }
 
+
+function finishGameButton (runRandom) {
+    randomButton.disabled = false;
+    container.style.display = "flex";
+    buttonCont.style.display = "flex";
+    resetColors();
+    finishGameCont.style.display = "none";
+    stopButton.style.display = "none";
+    runButton.style.display = "block"
+    runNumberText.textContent = "";
+    clearInterval(runRandom);
+}
 
 function stopInterval(runRandom) {
     clearInterval(runRandom);
@@ -207,6 +213,31 @@ function resetColors() {
         child.style.backgroundColor = "initial";
     }
 }
+
+
+// Finish Game check
+function finishGame() {
+    let allBoxesFilled = true;
+    for (let index = 0; index < lottoContainer.children.length; index++) {
+      let child = lottoContainer.children[index];
+  
+      // Check if the box has a number
+      if (child.innerHTML !== "") {
+        if (child.style.backgroundColor !== "rgb(188, 0, 0)") {
+          allBoxesFilled = false;
+          break;
+        }
+      }
+    }
+  
+    if (allBoxesFilled) {
+        container.style.display = "none";
+        buttonCont.style.display = "none";
+        finishGameCont.style.display = "flex";
+    }
+  }
+  
+ 
 
 
 // Playing music settings

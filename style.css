@@ -58,12 +58,11 @@ body {
     border-radius: 15px;
     padding: 15px;
     background-image: url(./img/img2.jpg);
-    object-fit: cover;
-    object-position: center;
     background-position-y: center;
     margin-top: 15px;
     filter: drop-shadow(0 0 0.80rem rgb(25, 25, 25));
     margin-top: 35px;
+    position: relative;
     display: none;
 }
 
@@ -79,8 +78,8 @@ body {
     color: #111;
     border-radius: 5px;
     border: 2px solid #333;
-    cursor: pointer;
     background-color: transparent;
+    cursor: pointer;
     transition: 0.2s ease-in-out;
 }
 
@@ -261,7 +260,8 @@ body.random-btn-animate .button-cont #random-button i {
     background-image: url(./img/loading-bg.jpg);
     background-position: center;
     background-size: cover;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 15px;
+    box-shadow: rgba(0, 0, 0, 0.64) 0px 3px 15px;
+    filter: drop-shadow(2px 4px 6px black);
     margin-top: 15px;
     border-radius: 25px;
     position: relative;
@@ -287,7 +287,7 @@ body.random-btn-animate .button-cont #random-button i {
     background-position: center;
     background-size: 100px;
     background-repeat: no-repeat;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 15px;
+    filter: drop-shadow(2px 4px 6px black);
     animation: run 2s infinite;
 }
 
@@ -431,6 +431,45 @@ body.random-btn-animate .button-cont #random-button i {
 
 body.active .wrapper .menu-sidebar {
     transform: translateX(0%);
+}
+
+
+.finish-game {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(./img/finish-game-bg.png);
+    background-size: cover;
+    background-position: center;
+    width: 550px;
+    height: 400px;
+    filter: drop-shadow(0 0 0.75rem rgb(31, 31, 31));
+    display: none;
+}
+
+
+.finish-game #finish-game-text {
+    font-family: 'Pacifico', cursive;
+    font-weight: 400;
+    color: #333;
+    text-shadow: 0 0 3px #bfa900, 0 0 5px #9d3700;
+    background: transparent;
+    font-size: 50px
+}
+
+
+.finish-game #finish-game-btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 5px solid #653D27;
+    background: transparent;
+    cursor: pointer;
+    font-size: 17px;
+    text-shadow: 0 0 3px #bfa900, 0 0 5px #9d3700;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.858);
 }
 
 
