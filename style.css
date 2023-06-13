@@ -327,6 +327,9 @@ body.random-btn-animate .button-cont #random-button i {
     position: absolute;
     top: 207px;
     z-index: 10;
+    background-color: #f2f2f297;
+    padding: 0 5px 0 5px;
+    border-radius: 15px;
     display: none;
 }
 
