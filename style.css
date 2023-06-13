@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    cursor:url(img/mouse-img.png) 30 30, auto;
+}
+
 body {
     display: flex;
     min-height: 100vh;

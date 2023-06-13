@@ -78,7 +78,7 @@ function randomGenerator () {
     return generatedNumbers;
 }
 
-   
+
 // Loading bar animation settings
 function loadingAnimate () {
     let count = 0;
